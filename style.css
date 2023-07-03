@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: monospace;
 }
 #numbers {
     background: #3b3b3b;
@@ -11,10 +12,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
     top: 50vh;
     left: 50vw;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     /* height: 500px; */
     box-sizing: content-box;
     padding: 5px;
@@ -31,4 +32,82 @@
     font-size: 20px;
     font-family: monospace;
     color: white;
+}
+ /* _____________________________ */
+
+#dashboard {
+    display: flex;
+    /* position: fixed; */
+    /* top: 10px; */
+    /* left: 50vw; */
+    margin: 10px;
+}
+
+#request {
+    /* transform: translateX(-50%); */
+    padding: 10px 20px;
+    font-size: 20px;
+    /* font-family: monospace; */
+    background: #d70000;
+    justify-content: center;
+    color: white;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#players {
+    width: 150px;
+    display: block;
+}
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 6px;
+    background: #2b2b2b;
+    border-bottom: solid 2px #d70000;
+    font-size: 16px;
+    color: white;
+}
+
+.name {}
+.score {}
+
+ /* _____________________________ */
+#movers {}
+.mover{
+    width: 60px;
+    border: solid 5px #d70000;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    transition: all .2s cubic-bezier(0.88, 0.85, 0.11, 0.96);
+    border-radius: 50%;
+}
+
+.mover.move {
+    animation: slide 2s 2s forwards linear;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        width: 60px;
+        height: 60px;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-90deg);
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        width: 60px;
+        height: 60px;
+    }
 }
