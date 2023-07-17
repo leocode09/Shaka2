@@ -24,7 +24,7 @@ numbers.innerHTML = numbers_str
 
 let pos = 0
 
-onkeydown = e => {
+onkeyup = e => {
     const arrowKeys = {
         ArrowUp: () => pos-=10,
         ArrowDown: () => pos+=10,
@@ -38,6 +38,18 @@ onkeydown = e => {
 
 const number_list = [... document.querySelectorAll('.number')]
 let centers = []
+onresize = () => {
+    centers = []
+    number_list.forEach(num => {
+        let properties = num.getBoundingClientRect()
+        centers.push({
+            x: properties.left+(properties.width/2),
+            y: properties.top+(properties.height/2)
+        })
+    });
+    slide(pos, centers)
+    console.log(centers);
+}
 number_list.forEach(num => {
     let properties = num.getBoundingClientRect()
     centers.push({
@@ -49,9 +61,35 @@ console.log(number_list);
 console.log(centers);
 
 let mover = document.querySelector('.mover')
+
+
+slide(pos, centers)
 function slide(pos, centers) {
+
     mover.setAttribute('style', `
         top: ${centers[pos].y}px;
-        left: ${centers[pos].x}px
+        left: ${centers[pos].x}px;
+        width: 20px;
+        height: 20px;
+
     `)
+
+    setTimeout(() => {  
+        mover.setAttribute('style', `
+            top: ${centers[pos].y}px;
+            left: ${centers[pos].x}px;
+            width: 50px;
+            height: 50px;
+        `)
+    }, 100);
 }
+  
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  

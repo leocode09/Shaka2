@@ -5,7 +5,7 @@
     font-family: monospace;
 }
 #numbers {
-    background: #3b3b3b;
+    background: #191919;
     width: 600px;
     display: flex;
     flex-direction: row;
@@ -21,7 +21,7 @@
     padding: 5px;
 }
 .number {
-    background: #2b2b2b;
+    background: #131313;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -58,6 +58,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: #0a0a0a;
+    
 }
 
 #players {
@@ -69,7 +71,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 2px 6px;
-    background: #2b2b2b;
+    background: #191919;
     border-bottom: solid 2px #d70000;
     font-size: 16px;
     color: white;
@@ -86,12 +88,8 @@ body {
     height: 60px;
     transform: translate(-50%, -50%);
     position: fixed;
-    transition: all .2s cubic-bezier(0.88, 0.85, 0.11, 0.96);
+    transition: all .2s linear;
     border-radius: 50%;
-}
-
-.mover.move {
-    animation: slide 2s 2s forwards linear;
 }
 
 @keyframes slide {
