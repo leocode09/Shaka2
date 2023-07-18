@@ -26,10 +26,10 @@ let pos = 0
 
 onkeyup = e => {
     const arrowKeys = {
-        ArrowUp: () => pos-=10,
-        ArrowDown: () => pos+=10,
-        ArrowLeft: () => pos-=1,
-        ArrowRight: () => pos+=1,
+        ArrowUp: () => (pos < 10)? pos+=90:pos-=10,
+        ArrowDown: () => (pos > 89)? pos-=90:pos+=10,
+        ArrowLeft: () => (zeros(pos)[1] == 0)? pos+=9:pos-=1,
+        ArrowRight: () => (zeros(pos)[1] == 9)? pos-=9:pos+=1
     };
     if (arrowKeys[e.key]) arrowKeys[e.key]();
     slide(pos, centers)
