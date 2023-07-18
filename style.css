@@ -21,6 +21,7 @@
     padding: 5px;
 }
 .number {
+    /* border-radius: 50%; */
     background: #131313;
     padding: 10px;
     display: flex;
@@ -29,8 +30,8 @@
     width: 50px;
     height: 50px;
     margin: 5px;
-    font-size: 20px;
-    font-family: monospace;
+    font-size: 18px;
+    font-family: sans-serif;
     color: white;
 }
  /* _____________________________ */
@@ -40,7 +41,8 @@
     /* position: fixed; */
     /* top: 10px; */
     /* left: 50vw; */
-    margin: 10px;
+    margin-right: 10px;
+    flex-direction: column;
 }
 
 #request {
@@ -55,11 +57,18 @@
 
 body {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     background: #0a0a0a;
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    padding-top: 50px;
 }
 
 #players {
@@ -83,15 +92,15 @@ body {
  /* _____________________________ */
 #movers {}
 .mover{
-    width: 60px;
     border: solid 5px #d70000;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     transform: translate(-50%, -50%);
     position: fixed;
-    transition: all .2s linear;
+    transition: all .1s linear;
     border-radius: 50%;
 }
-
+/* 
 @keyframes slide {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -108,4 +117,4 @@ body {
         width: 60px;
         height: 60px;
     }
-}
+} */
